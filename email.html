@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Results</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<div class="glass-card">
+    <h1>📬 Alert Results</h1>
+
+    <p class="status">{{ status }}</p>
+
+    {% if emails %}
+        {% for email in emails %}
+        <div class="alert-card">
+            <p>🚨 <strong>Important Email Detected</strong></p>
+            <p>📨 {{ email.sender }}</p>
+            <p>📌 {{ email.subject }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No important emails found.</p>
+    {% endif %}
+
+    <a href="/">
+        <button class="back-btn">⬅ Back</button>
+    </a>
+</div>
+
+</body>
+</html>
