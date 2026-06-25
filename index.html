@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Alert Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="glass-card">
+
+    <h1>⚡ Smart Alert Dashboard</h1>
+
+    <p class="tagline">
+        Stop checking emails. Start getting notified.
+    </p>
+
+    <p class="hero-text">
+        An intelligent system that detects high-priority emails and instantly delivers
+        WhatsApp alerts — so you never miss opportunities that matter.
+    </p>
+
+    <!-- ✅ EMAIL COUNTS -->
+    <div class="stats">
+
+        <div class="stat-box">
+            <h2>{{ total }}</h2>
+            <span>Total Emails</span>
+        </div>
+
+        <div class="stat-box highlight">
+            <h2>{{ important }}</h2>
+            <span>Important</span>
+        </div>
+
+        <div class="stat-box">
+            <h2>{{ ignored }}</h2>
+            <span>Ignored</span>
+        </div>
+
+    </div>
+
+    <!-- ✅ BUTTON -->
+    <a href="/check">
+        <button class="main-btn">⚡ Scan Emails</button>
+    </a>
+
+</div>
+
+</body>
+</html>
